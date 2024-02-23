@@ -38,7 +38,7 @@ const AudioRecorder = () => {
         console.log(obj);
        addAudio(obj).then((res)=>{
         if(res.msg=="new audio added successful"){
-          
+
           getAudio().then((res)=>{
             if(res?.msg=="successful"){
               setAudioUrl(res.data)
@@ -131,7 +131,7 @@ console.log(audioUrl)
    
       <br />
       {audioUrl.length > 0 &&
-        audioUrl.map((e, i) => {
+        audioUrl.reverse().map((e, i) => {
           return (
             <div key={i} className='singleAudio'>
                 <div className='dateTimeDiv'>
