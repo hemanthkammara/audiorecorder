@@ -77,7 +77,11 @@ const AudioRecorder = () => {
   };
 
   useEffect(()=>{
- const audios=getAudio().then((res)=>{setAudioUrl(res.data)})
+ getAudio().then((res)=>{
+  if(res?.msg=="successful"){
+    setAudioUrl(res.data)
+  }
+ })
 //  console.log(audios);
   },[])
 
