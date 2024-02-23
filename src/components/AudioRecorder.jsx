@@ -35,10 +35,15 @@ const AudioRecorder = () => {
            audio:URL.createObjectURL(blob)
             //audio:`http://localhost:7000/audio/`.createObjectURL(blob)
         }
-       // console.log(obj);
+        console.log(obj);
        addAudio(obj).then((res)=>{
         if(res.msg=="new audio added successful"){
-          console.log()
+          
+          getAudio().then((res)=>{
+            if(res?.msg=="successful"){
+              setAudioUrl(res.data)
+            }
+           })
         }
        })
         arr.push(obj);
